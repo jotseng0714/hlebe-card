@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 8C50 8 22 40 22 63C22 79 34.5 92 50 92C65.5 92 78 79 78 63C78 40 50 8 50 8Z' fill='none' stroke='%232E3B2A' stroke-width='7'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Montserrat:wght@300;400;500&display=swap">
 <style>
   :root {
     --ground: #D5DCCC;   /* 鼠尾草 Sage */
@@ -27,7 +27,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    font-family: 'Noto Sans TC', 'Poppins', system-ui, sans-serif;
+    font-family: 'Noto Sans TC', 'Montserrat', system-ui, sans-serif;
     background: var(--paper);
     color: var(--ink);
     min-height: 100vh;
@@ -35,7 +35,7 @@
     justify-content: center;
     padding: 0 0 calc(24px + env(safe-area-inset-bottom));
   }
-  .en { font-family: 'Poppins', 'Noto Sans TC', sans-serif; }
+  .en { font-family: 'Montserrat', 'Noto Sans TC', sans-serif; }
   .wrap { width: 100%; max-width: 440px; }
 
   /* Hero */
@@ -55,7 +55,7 @@
   .hero > * { position: relative; }
   .mark { width: 64px; height: 64px; display: block; margin: 0 auto; color: var(--ink); }
   .co-zh {
-    font-family: 'Noto Serif TC', serif; font-weight: 600;
+    font-family: 'Noto Sans TC', sans-serif; font-weight: 500;
     font-size: 21px; letter-spacing: .28em; margin: 16px 0 0 .28em;
   }
   .co-zh small { display: block; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: .42em; margin-top: 4px; }
@@ -72,9 +72,9 @@
     position: relative;
   }
   .name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
-  .name-zh { font-family: 'Noto Serif TC', serif; font-weight: 600; font-size: 30px; letter-spacing: .12em; }
+  .name-zh { font-family: 'Noto Sans TC', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: .12em; }
   .name-en { font-size: 16px; font-weight: 500; }
-  .title { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .title { color: var(--muted); font-size: 14px; font-weight: 300; margin-top: 6px; }
 
   .save {
     display: flex; align-items: center; justify-content: center; gap: 10px;
