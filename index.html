@@ -1,351 +1,232 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HLEBÉ 曾詩喬 | 數位名片</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background: #f3f4f6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>曾詩喬 Shih-Chiao (Jo) Tseng｜弘林環境生技</title>
+<meta name="description" content="弘林環境生技股份有限公司 創辦人暨執行長 曾詩喬 Shih-Chiao (Jo) Tseng — Founder & CEO, Honglin Environmental Biotech Co., Ltd. 旗下寵物品牌 HLEBÉ 赫樂貝。">
+<meta property="og:title" content="曾詩喬 Shih-Chiao (Jo) Tseng｜弘林環境生技">
+<meta property="og:description" content="Founder & CEO, Honglin Environmental Biotech Co., Ltd. · HLEBÉ 赫樂貝">
+<meta name="theme-color" content="#D5DCCC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 8C50 8 22 40 22 63C22 79 34.5 92 50 92C65.5 92 78 79 78 63C78 40 50 8 50 8Z' fill='none' stroke='%232E3B2A' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600&family=Poppins:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #D5DCCC;   /* 鼠尾草 Sage */
+    --tint:   #E9EDE3;
+    --paper:  #F8F9F5;
+    --card:   #FFFFFF;
+    --ink:    #2E3B2A;   /* 深苔綠 */
+    --muted:  #535E4D;
+    --line:   #DDE3D5;
+    --navy:   #243049;   /* HLEBÉ 深藍 */
+    --gold:   #C4A468;   /* HLEBÉ 金 */
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Noto Sans TC', 'Poppins', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 calc(24px + env(safe-area-inset-bottom));
+  }
+  .en { font-family: 'Poppins', 'Noto Sans TC', sans-serif; }
+  .wrap { width: 100%; max-width: 440px; }
 
-        /* 手機殼容器 */
-        .card-shell {
-            width: 100%;
-            max-width: 375px;
-            background: #FAF9F6;
-            border-radius: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
-            overflow: hidden;
-            border: 6px solid white;
-        }
+  /* Hero */
+  .hero {
+    position: relative;
+    background: var(--ground);
+    padding: 44px 16px 72px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: var(--tint);
+    clip-path: polygon(0 0, 100% 0, 100% 22%, 0 62%);
+  }
+  .hero > * { position: relative; }
+  .mark { width: 64px; height: 64px; display: block; margin: 0 auto; color: var(--ink); }
+  .co-zh {
+    font-family: 'Noto Serif TC', serif; font-weight: 600;
+    font-size: 21px; letter-spacing: .28em; margin: 16px 0 0 .28em;
+  }
+  .co-zh small { display: block; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: .42em; margin-top: 4px; }
+  .rule { width: 28px; height: 2px; background: var(--gold); margin: 14px auto 10px; border-radius: 1px; }
+  .co-en { font-size: 11px; letter-spacing: .14em; font-weight: 500; }
 
-        /* 上方視覺區 */
-        .card-hero {
-            height: 208px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #C2CCB2;
-        }
-        .triangle-tr {
-            position: absolute;
-            top: 0; right: 0;
-            width: 128px; height: 64px;
-            background: #DCE6C2;
-            clip-path: polygon(0 0, 100% 0, 100% 100%);
-        }
-        .triangle-bl {
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 128px; height: 64px;
-            background: #DCE6C2;
-            clip-path: polygon(0 0, 0 100%, 100% 100%);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .logo-circle {
-            width: 64px; height: 64px;
-            background: rgba(255,255,255,.2);
-            backdrop-filter: blur(4px);
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 12px;
-        }
-        .brand-name {
-            font-size: 1.125rem;
-            letter-spacing: 0.4em;
-            font-weight: 300;
-            color: #2F3E1B;
-        }
+  /* Person card */
+  .person {
+    margin: -44px 16px 0;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 26px 20px 20px;
+    box-shadow: 0 10px 30px rgba(46,59,42,.10);
+    position: relative;
+  }
+  .name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+  .name-zh { font-family: 'Noto Serif TC', serif; font-weight: 600; font-size: 30px; letter-spacing: .12em; }
+  .name-en { font-size: 16px; font-weight: 500; }
+  .title { color: var(--muted); font-size: 14px; margin-top: 6px; }
 
-        /* 資訊卡片 */
-        .info-wrapper {
-            padding: 0 24px 40px;
-            position: relative;
-            z-index: 20;
-            margin-top: -40px;
-        }
-        .info-card {
-            background: white;
-            border-radius: 32px;
-            padding: 32px;
-            box-shadow: 0 10px 25px rgba(0,0,0,.08);
-            border: 1px solid #f9fafb;
-            text-align: center;
-        }
-        .person-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -.025em;
-            color: #2F3E1B;
-        }
-        .person-sub {
-            font-size: .875rem;
-            margin-top: 4px;
-            letter-spacing: .1em;
-            font-weight: 500;
-            color: #4A5638;
-        }
+  .save {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; min-height: 52px; margin-top: 20px;
+    background: var(--ink); color: #fff; text-decoration: none;
+    border-radius: 14px; font-size: 16px; font-weight: 700;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .save:active { transform: scale(.98); }
+  .save .en { font-weight: 500; font-size: 14px; opacity: .85; }
 
-        /* 聯絡列表 */
-        .contact-list {
-            margin-top: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: left;
-        }
-        .contact-row {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            border-radius: 16px;
-            text-decoration: none;
-            color: inherit;
-            transition: background .15s;
-        }
-        a.contact-row:hover { background: #f8fafc; }
-        a.contact-row:hover .icon-wrap {
-            background: #2F3E1B;
-            color: white;
-        }
-        .icon-wrap {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            background: rgba(194,204,178,.2);
-            color: #2F3E1B;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 16px;
-            flex-shrink: 0;
-            transition: background .15s, color .15s;
-        }
-        .contact-label {
-            font-size: 9px;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: -.025em;
-        }
-        .contact-value {
-            font-size: .875rem;
-            font-weight: 500;
-            color: #374151;
-            line-height: 1.3;
-        }
-        .contact-note {
-            font-size: 9px;
-            color: #9ca3af;
-        }
+  .list { list-style: none; margin-top: 18px; border-top: 1px solid var(--line); }
+  .list a, .list div.row {
+    display: flex; align-items: center; gap: 14px;
+    min-height: 56px; padding: 8px 2px;
+    color: inherit; text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .ic {
+    width: 38px; height: 38px; flex-shrink: 0; border-radius: 50%;
+    background: var(--tint); color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ic svg { width: 18px; height: 18px; }
+  .lab { font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+  .val { font-size: 15px; font-weight: 500; line-height: 1.35; word-break: break-word; }
+  .val.sm { font-size: 13px; font-weight: 400; line-height: 1.45; display: block; }
+  .go { margin-left: auto; color: var(--muted); flex-shrink: 0; }
+  .go svg { width: 16px; height: 16px; display: block; }
 
-        /* 儲存按鈕 */
-        .save-btn {
-            width: 100%;
-            margin-top: 32px;
-            padding: 16px;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 1rem;
-            font-family: inherit;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            border: none;
-            cursor: pointer;
-            background: #2F3E1B;
-            color: white;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,.2);
-            transition: transform .1s;
-        }
-        .save-btn:active { transform: scale(.95); }
+  /* Brand */
+  .brand {
+    margin: 16px 16px 0;
+    background: var(--tint);
+    border-radius: 20px;
+    padding: 20px;
+    color: var(--navy);
+  }
+  .brand-head { display: flex; align-items: center; gap: 14px; }
+  .brand-head img { width: 52px; height: auto; display: block; }
+  .brand-kicker { font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+  .brand-name { font-size: 18px; font-weight: 500; margin-top: 2px; }
+  .brand-name .en { letter-spacing: .12em; }
+  .chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+  .chip {
+    display: flex; align-items: center; gap: 8px;
+    min-height: 48px; padding: 8px 12px;
+    background: var(--card); color: var(--navy); text-decoration: none;
+    border-radius: 12px; font-size: 14px; font-weight: 500;
+    border: 1px solid rgba(36,48,73,.08);
+  }
+  .chip svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .chip span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-        /* QR Code 區 */
-        .qr-section {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .qr-box {
-            background: white;
-            padding: 16px;
-            border-radius: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,.05);
-            border: 1px solid #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .qr-box img { width: 144px; height: 144px; display: block; border-radius: 8px; }
-        .qr-placeholder {
-            width: 144px; height: 144px;
-            background: #f9fafb;
-            border-radius: 8px;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-        .qr-caption {
-            margin-top: 16px;
-            font-size: 10px;
-            color: #d1d5db;
-            font-style: italic;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-        }
-
-        /* SVG icon helper */
-        svg { display: block; }
-    </style>
+  /* QR */
+  .share { text-align: center; margin: 28px 16px 0; }
+  .qr { display: inline-block; background: #fff; padding: 12px; border-radius: 16px; box-shadow: 0 2px 10px rgba(46,59,42,.08); }
+  .qr svg { width: 148px; height: 148px; display: block; }
+  .share p { font-size: 12px; color: var(--muted); margin-top: 10px; letter-spacing: .06em; }
+  @media (max-width: 360px) {
+    .chips { grid-template-columns: minmax(0, 1fr); }
+    .co-en { font-size: 10px; letter-spacing: .08em; }
+  }
+  footer { text-align: center; font-size: 11px; color: var(--muted); margin-top: 18px; }
+</style>
 </head>
 <body>
+<main class="wrap">
 
-<div class="card-shell">
-    <!-- Hero -->
-    <div class="card-hero">
-        <div class="triangle-tr"></div>
-        <div class="triangle-bl"></div>
-        <div class="hero-content">
-            <div class="logo-circle">
-                <svg width="36" height="36" viewBox="0 0 100 100" fill="none">
-                    <path d="M50 15C50 15 25 40 25 65C25 78.8071 36.1929 90 50 90C63.8071 90 75 78.8071 75 65C75 40 50 15 50 15Z" stroke="#2F3E1B" stroke-width="4"/>
-                    <circle cx="50" cy="62" r="8" fill="#2F3E1B" fill-opacity="0.2"/>
-                </svg>
-            </div>
-            <p class="brand-name">HLEBÉ</p>
-        </div>
+  <header class="hero">
+    <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="弘林環境生技 logo">
+      <path d="M50 8C50 8 22 40 22 63C22 79 34.5 92 50 92C65.5 92 78 79 78 63C78 40 50 8 50 8Z" stroke-width="4.5"/>
+      <path d="M30 63C37 56 43 70 50 63C57 56 63 70 70 63" stroke-width="4"/>
+      <path d="M34 75C40 69 45 81 51 75C57 69 61 79 66 75" stroke-width="3.4"/>
+    </svg>
+    <h1 class="co-zh">弘林環境生技<small>股份有限公司</small></h1>
+    <div class="rule"></div>
+    <p class="co-en en">HONGLIN ENVIRONMENTAL BIOTECH CO., LTD.</p>
+  </header>
+
+  <section class="person" aria-label="聯絡資訊 Contact">
+    <div class="name">
+      <span class="name-zh">曾詩喬</span>
+      <span class="name-en en">Shih-Chiao (Jo) Tseng</span>
     </div>
+    <p class="title">創辦人暨執行長 <span class="en">｜ Founder &amp; CEO</span></p>
 
-    <!-- Info Card -->
-    <div class="info-wrapper">
-        <div class="info-card">
-            <h1 class="person-name">曾詩喬</h1>
-            <p class="person-sub">Jo Tseng | 總經理</p>
+    <a class="save" href="jo-tseng.vcf" download="Shih-Chiao_Jo_Tseng.vcf">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+      儲存聯絡人 <span class="en">Save Contact</span>
+    </a>
 
-            <div class="contact-list">
-                <!-- Phone -->
-                <a href="tel:0921731527" class="contact-row">
-                    <div class="icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div>
-                        <p class="contact-label">Mobile</p>
-                        <p class="contact-value">0921-731-527</p>
-                    </div>
-                </a>
+    <ul class="list">
+      <li><a href="tel:+886921731527">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span>
+        <span><span class="lab">手機 Mobile</span><br><span class="val en">+886 921 731 527</span></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a></li>
+      <li><a href="tel:+88636210237">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span><span class="lab">公司電話 Office</span><br><span class="val en">+886 3 621 0237</span></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a></li>
+      <li><a href="mailto:jotseng@gmail.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+        <span><span class="lab">電子郵件 Email</span><br><span class="val en">jotseng@gmail.com</span></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%8B%97%E6%A0%97%E7%B8%A3%E8%8B%97%E6%A0%97%E5%B8%82%E6%96%B0%E5%B7%9D%E9%87%8C%E9%BE%8D%E5%B2%A18-1%E8%99%9F" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span><span class="lab">地址 Address</span><br>
+          <span class="val sm">360 苗栗縣苗栗市新川里龍岡 8-1 號 1 樓</span>
+          <span class="val sm en">1F., No. 8-1, Longgang, Xinchuan Vil., Miaoli City, Miaoli County 360, Taiwan</span></span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a></li>
+      <li><div class="row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg></span>
+        <span><span class="lab">統一編號 Tax ID</span><br><span class="val en">62198034</span></span>
+      </div></li>
+    </ul>
+  </section>
 
-                <!-- Email -->
-                <a href="mailto:jotseng@gmail.com" class="contact-row">
-                    <div class="icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    </div>
-                    <div>
-                        <p class="contact-label">Email</p>
-                        <p class="contact-value">jotseng@gmail.com</p>
-                    </div>
-                </a>
-
-                <!-- Company -->
-                <div class="contact-row">
-                    <div class="icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
-                    </div>
-                    <div>
-                        <p class="contact-label">Company</p>
-                        <p class="contact-value">弘林環境生技</p>
-                        <p class="contact-note">統編: 62198034</p>
-                    </div>
-                </div>
-
-                <!-- Address -->
-                <div class="contact-row">
-                    <div class="icon-wrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div>
-                        <p class="contact-label">Address</p>
-                        <p class="contact-value">苗栗縣苗栗市新川里 003 鄰龍岡 8-1 號</p>
-                    </div>
-                </div>
-            </div>
-
-            <button class="save-btn" onclick="saveContact()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                儲存聯絡資訊
-            </button>
-        </div>
-
-        <!-- QR Code -->
-        <div class="qr-section">
-            <div class="qr-box">
-                <div class="qr-placeholder" id="qr-placeholder"></div>
-                <img id="qr-img" src="" alt="QR Code" style="display:none">
-            </div>
-            <p class="qr-caption">Scan to share digital card</p>
-        </div>
+  <section class="brand" aria-label="旗下品牌 HLEBÉ">
+    <div class="brand-head">
+      <img src="hlebe-icon.svg" alt="HLEBÉ 赫樂貝 標誌">
+      <div>
+        <p class="brand-kicker">旗下寵物品牌 <span class="en">· OUR PET CARE BRAND</span></p>
+        <p class="brand-name"><span class="en">HLEBÉ</span> 赫樂貝</p>
+      </div>
     </div>
-</div>
+    <div class="chips">
+      <a class="chip" href="https://www.hlebe.com.tw" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>官網 Website</span></a>
+      <a class="chip" href="https://www.instagram.com/hlebe.petcare/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        <span>Instagram</span></a>
+      <a class="chip" href="https://www.facebook.com/profile.php?id=61593790420577" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15 8h-2a2 2 0 0 0-2 2v11"/><path d="M9 13h5"/></svg>
+        <span>Facebook</span></a>
+      <a class="chip" href="https://line.me/R/ti/p/@732uljnn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>LINE</span></a>
+    </div>
+  </section>
 
-<script>
-    // QR Code
-    (function() {
-        var url = encodeURIComponent(window.location.href);
-        var src = 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + url + '&color=2F3E1B&bgcolor=C2CCB2';
-        var img = document.getElementById('qr-img');
-        var placeholder = document.getElementById('qr-placeholder');
-        img.onload = function() {
-            placeholder.style.display = 'none';
-            img.style.display = 'block';
-        };
-        img.src = src;
-    })();
+  <section class="share">
+    <div class="qr" role="img" aria-label="本頁 QR Code"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" class="segno"><path class="qrline" stroke="#2e3b2a" d="M2 2.5h7m1 0h1m3 0h1m3 0h1m2 0h2m1 0h7m-29 1h1m5 0h1m1 0h1m1 0h2m1 0h2m1 0h3m3 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h3m4 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m3 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h2m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m3 0h1m5 0h2m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h3m5 0h2m1 0h1m-20 1h1m1 0h2m1 0h3m1 0h1m1 0h2m1 0h1m1 0h4m2 0h1m2 0h1m1 0h2m-26 1h1m3 0h1m4 0h1m1 0h1m1 0h1m2 0h6m3 0h1m-29 1h1m1 0h1m1 0h4m1 0h3m1 0h2m2 0h2m1 0h2m2 0h1m1 0h2m-20 1h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h3m5 0h1m-29 1h1m1 0h2m2 0h2m2 0h6m1 0h1m1 0h1m3 0h1m1 0h2m-27 1h3m2 0h1m1 0h1m3 0h2m1 0h4m1 0h2m1 0h1m3 0h3m-29 1h1m1 0h1m3 0h4m2 0h3m2 0h1m1 0h1m1 0h1m4 0h3m-29 1h1m2 0h1m1 0h1m1 0h6m2 0h2m1 0h1m1 0h5m2 0h1m-28 1h1m4 0h6m2 0h2m6 0h1m2 0h2m1 0h1m-24 1h1m2 0h1m2 0h1m4 0h1m1 0h1m5 0h1m1 0h3m-28 1h1m1 0h3m1 0h1m2 0h2m1 0h4m1 0h1m2 0h1m2 0h1m2 0h1m-25 1h2m5 0h1m1 0h2m3 0h2m2 0h3m1 0h1m1 0h1m-26 1h6m1 0h2m1 0h3m1 0h12m-19 1h2m1 0h1m4 0h5m3 0h5m-29 1h7m1 0h1m2 0h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h1m-28 1h1m5 0h1m1 0h3m1 0h2m2 0h1m1 0h3m3 0h2m1 0h2m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h1m4 0h1m2 0h5m1 0h3m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m3 0h3m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m2 0h1m2 0h2m2 0h1m1 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m3 0h2m1 0h2m1 0h1m2 0h3m3 0h1m1 0h1m-28 1h7m1 0h1m2 0h5m4 0h1m2 0h2m2 0h1"/></svg></div>
+    <p>掃描分享電子名片 <span class="en">· Scan to share</span></p>
+  </section>
 
-    // Save vCard
-    function saveContact() {
-        var vCard = [
-            "BEGIN:VCARD",
-            "VERSION:3.0",
-            "FN:曾詩喬",
-            "ORG:弘林環境生技",
-            "TITLE:總經理",
-            "TEL;TYPE=CELL:0921731527",
-            "EMAIL:jotseng@gmail.com",
-            "ADR;TYPE=WORK:;;苗栗縣苗栗市新川里 003 鄰龍岡 8-1 號",
-            "NOTE:統一編號: 62198034",
-            "END:VCARD"
-        ].join("\n");
-
-        var blob = new Blob([vCard], { type: "text/vcard" });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement("a");
-        a.href = url;
-        a.download = "曾詩喬_Contact.vcf";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }
-</script>
+  <footer class="en">© Honglin Environmental Biotech Co., Ltd.</footer>
+</main>
 </body>
 </html>
