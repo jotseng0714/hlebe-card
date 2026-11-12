@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>曾詩喬 Shih-Chiao (Jo) Tseng｜弘林環境生技</title>
-<meta name="description" content="弘林環境生技股份有限公司 創辦人暨執行長 曾詩喬 Shih-Chiao (Jo) Tseng — Founder & CEO, Honglin Environmental Biotech Co., Ltd. 旗下寵物品牌 HLEBÉ 赫樂貝。">
+<meta name="description" content="弘林環境生技股份有限公司 創辦人暨執行長 曾詩喬 Shih-Chiao (Jo) Tseng — Founder & CEO, Honglin Environmental Biotech Co., Ltd. 旗下品牌 赫樂貝 HLEBÉ、知頤御貓行館 ZHIYI PETS。">
 <meta property="og:title" content="曾詩喬 Shih-Chiao (Jo) Tseng｜弘林環境生技">
-<meta property="og:description" content="Founder & CEO, Honglin Environmental Biotech Co., Ltd. · HLEBÉ 赫樂貝">
-<meta name="theme-color" content="#FFFFFF">
+<meta property="og:description" content="Founder & CEO, Honglin Environmental Biotech Co., Ltd. · 赫樂貝 HLEBÉ · 知頤御貓行館 ZHIYI PETS">
+<meta name="theme-color" content="#F6F0E2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-110 -110 220 220'%3E%3Cg fill='none' stroke='%2331261D' stroke-width='10' stroke-linejoin='miter'%3E%3Cpath d='M94.55,-32.56 A100,100 0 0 0 -99.28,12 L-70.99,12 A72,72 0 0 0 70.99,12 L24,12'/%3E%3Cpath d='M94.55,-32.56 A100,100 0 0 0 -99.28,12 L-70.99,12 A72,72 0 0 0 70.99,12 L24,12' transform='rotate(180)'/%3E%3C/g%3E%3Cg fill='%238B634B'%3E%3Ccircle cx='0' cy='-9' r='15'/%3E%3Cpolygon points='-8,-2 8,-2 19,27 -19,27'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Tenor+Sans&display=swap">
 <style>
   :root {
-    --ground: #FFFFFF;   /* 名片正面 白 */
+    --ground: #F6F0E2;   /* 名片正面 頂級象牙卡 紙色 */
     --tint:   #F3EEE8;   /* 暖米 */
     --paper:  #F7F4F0;
     --card:   #FFFFFF;
@@ -23,7 +23,8 @@
     --bronze: #8B634B;   /* Pantone 876 C 暖古銅 */
     --muted:  #5B5550;
     --line:   #E8E2DA;
-    --navy:   #243049;   /* HLEBÉ 深藍 */
+    --emp:    #231F20;   /* 員工資訊 黑（印刷 K100） */
+    --espresso: #4A412A; /* 旗下品牌 Pantone 440 C Dark Espresso */
     --serif:  'Noto Serif TC', 'Source Han Serif TC', 'Noto Serif CJK TC', serif;
     --optima: Optima, 'Optima nova', 'Tenor Sans', sans-serif;
   }
@@ -61,7 +62,7 @@
     font-weight: 600; color: var(--ink);
     font-size: 22px; letter-spacing: .28em; margin: 16px 0 0 .28em;
   }
-  .co-zh small { display: block; font-weight: 400; font-size: 12px; letter-spacing: .42em; margin-top: 4px; color: var(--muted); }
+  .co-zh small { display: block; font-weight: 400; font-size: 12px; letter-spacing: 1.1em; margin: 6px 0 0 calc(1.1em - .28em); color: var(--muted); }
   .rule { width: 28px; height: 2px; background: var(--bronze); margin: 14px auto 10px; border-radius: 1px; }
   .co-en { font-size: 11px; letter-spacing: .16em; color: var(--muted); }
 
@@ -74,10 +75,11 @@
     box-shadow: 0 10px 30px rgba(49,38,29,.10);
     position: relative;
   }
+  .name, .title, .lab, .val { color: var(--emp); }
   .name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
   .name-zh { font-weight: 600; font-size: 30px; letter-spacing: .12em; }
   .name-en { font-size: 16.5px; }
-  .title { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .title { font-size: 14px; margin-top: 6px; }
   .title-rule { width: 32px; height: 2px; background: var(--bronze); margin-top: 12px; }
 
   .save {
@@ -103,7 +105,7 @@
     display: flex; align-items: center; justify-content: center;
   }
   .ic svg { width: 18px; height: 18px; }
-  .lab { font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+  .lab { font-size: 11px; letter-spacing: .04em; opacity: .72; }
   .val { font-size: 15px; line-height: 1.35; word-break: break-word; }
   .val.sm { font-size: 13px; font-weight: 400; line-height: 1.45; display: block; }
   .go { margin-left: auto; color: var(--muted); flex-shrink: 0; }
@@ -117,12 +119,12 @@
     padding: 20px;
     color: var(--ink);
   }
-  .brand-head { display: flex; align-items: center; gap: 14px; }
-  .brand-head img { width: 52px; height: auto; display: block; }
-  .brand-kicker { font-size: 11px; color: var(--muted); letter-spacing: .08em; }
-  .brand-name { font-family: var(--serif); font-size: 18px; font-weight: 500; margin-top: 2px; }
-  .brand-name .en { letter-spacing: .12em; }
-  .chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+  .brand-kicker { font-size: 12px; color: var(--espresso); letter-spacing: .12em; padding-bottom: 10px; border-bottom: 1px solid rgba(74,65,42,.18); }
+  .brand-item { padding-top: 14px; }
+  .brand-item + .brand-item { margin-top: 14px; border-top: 1px solid rgba(74,65,42,.12); }
+  .brand-name { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--espresso); }
+  .brand-name .en { letter-spacing: .12em; font-size: 15px; margin-left: 4px; }
+  .chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
   .chip {
     display: flex; align-items: center; gap: 8px;
     min-height: 48px; padding: 8px 12px;
@@ -198,27 +200,27 @@
     </ul>
   </section>
 
-  <section class="brand" aria-label="旗下品牌 HLEBÉ">
-    <div class="brand-head">
-      <img src="hlebe-icon.svg" alt="HLEBÉ 赫樂貝 標誌">
-      <div>
-        <p class="brand-kicker">旗下寵物品牌 <span class="en">· OUR PET CARE BRAND</span></p>
-        <p class="brand-name"><span class="en">HLEBÉ</span> 赫樂貝</p>
+  <section class="brand" aria-label="旗下品牌 OUR BRANDS">
+    <p class="brand-kicker">旗下品牌 <span class="en">OUR BRANDS</span></p>
+    <div class="brand-item">
+      <p class="brand-name">赫樂貝 <span class="en">HLEBÉ</span></p>
+      <div class="chips">
+        <a class="chip" href="https://hlebe.com.tw" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>官網 Website</span></a>
+        <a class="chip" href="https://www.instagram.com/hlebe.petcare/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+          <span>Instagram</span></a>
+        <a class="chip" href="https://www.facebook.com/profile.php?id=61593790420577" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15 8h-2a2 2 0 0 0-2 2v11"/><path d="M9 13h5"/></svg>
+          <span>Facebook</span></a>
+        <a class="chip" href="https://line.me/R/ti/p/@732uljnn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>LINE</span></a>
       </div>
     </div>
-    <div class="chips">
-      <a class="chip" href="https://hlebe.com.tw" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span>官網 Website</span></a>
-      <a class="chip" href="https://www.instagram.com/hlebe.petcare/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
-        <span>Instagram</span></a>
-      <a class="chip" href="https://www.facebook.com/profile.php?id=61593790420577" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15 8h-2a2 2 0 0 0-2 2v11"/><path d="M9 13h5"/></svg>
-        <span>Facebook</span></a>
-      <a class="chip" href="https://line.me/R/ti/p/@732uljnn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        <span>LINE</span></a>
+    <div class="brand-item">
+      <p class="brand-name">知頤御貓行館 <span class="en">ZHIYI PETS</span></p>
     </div>
   </section>
 
